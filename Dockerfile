@@ -1,6 +1,9 @@
 FROM oven/bun:1 AS base
 WORKDIR /app
 
+# Install curl for Coolify health checks
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+
 # Install deps
 COPY backend/package.json backend/bun.lock* ./
 RUN bun install --frozen-lockfile || bun install
