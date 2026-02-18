@@ -446,7 +446,7 @@
 				DEVELOPMENT_TEAM = 66ZD8Z6QR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_API_BASE_URL = "https://api.healthwallet.app/api/v1";
+				INFOPLIST_KEY_API_BASE_URL = "https://healthwallet.mosaiclab.net/api/v1";
 				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "HealthWallet needs calendar access to create supplement reminders.";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "HealthWallet reads your health data to provide personalized readiness scores and wellness insights.";
 				INFOPLIST_KEY_REVENUECAT_API_KEY = "$(REVENUECAT_API_KEY)";
