@@ -1,0 +1,31 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserdata
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Node / Bun
+node_modules/
+
+# Uploaded user files
+backend/uploads/
+
+# Claude / AI tooling
+.claude/
+.gemini/
+
+# Temp files
+mcp_output.txt
+*.log

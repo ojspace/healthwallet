@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  healthwallet-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.hono
+    container_name: healthwallet-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - PORT=8000
+      - MONGODB_URL=mongodb://mongo:27017
+    volumes:
+      - uploads:/app/uploads
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.healthwallet.rule=Host(`APP_DOMAIN`)"
+      - "traefik.http.routers.healthwallet.entrypoints=websecure"
+      - "traefik.http.routers.healthwallet.tls.certresolver=letsencrypt"
+      - "traefik.http.services.healthwallet.loadbalancer.server.port=8000"
+    networks:
+      - vibe-network
+
+volumes:
+  uploads:
+
+networks:
+  vibe-network:
+    external: true
